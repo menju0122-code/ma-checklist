@@ -50,39 +50,6 @@
             <button class="generate-btn" onclick="generateChecklist()">&#128221; チェックリストを生成</button>
         </div>
 
-        <!-- ===== AI分析パネル ===== -->
-        <div class="selection-panel analyzer-section">
-            <h2>🤖 企業概況書 AI分析</h2>
-            <p class="analyzer-desc">企業概況書（IM・PDF）をアップロードすると、Claude AIが買い手視点のメリット・デメリットと初回QAを自動生成します。</p>
-
-            <!-- ファイルアップロード -->
-            <div id="pdf-drop-zone" class="pdf-drop-zone" onclick="document.getElementById('pdf-upload').click()">
-                <div id="pdf-icon" class="pdf-drop-icon">📄</div>
-                <div class="pdf-drop-text">クリックまたはドラッグ＆ドロップで PDFをアップロード</div>
-                <div id="pdf-filename" class="pdf-filename"></div>
-                <input type="file" id="pdf-upload" accept=".pdf" style="display:none">
-            </div>
-            <div id="pdf-status" class="pdf-status"></div>
-
-            <!-- APIキー入力 -->
-            <div class="api-key-row">
-                <label>Claude API Key</label>
-                <div class="api-key-input-wrap">
-                    <input type="password" id="api-key" placeholder="sk-ant-api03-..." autocomplete="off">
-                    <button id="toggle-key-btn" class="toggle-key-btn" onclick="toggleApiKey()">👁</button>
-                </div>
-                <div class="api-key-note">※ APIキーはブラウザ内のみで使用されます（Claude APIへの通信を除く）</div>
-            </div>
-
-            <!-- 分析ボタン -->
-            <button id="analyze-btn" class="analyze-btn" onclick="analyzeCompanyDocument()" disabled>
-                🤖 AI分析を実行
-            </button>
-        </div>
-
-        <!-- ===== 分析結果パネル ===== -->
-        <div id="analysis-result" class="analysis-result" style="display:none"></div>
-
         <!-- ===== チェックリスト出力 ===== -->
         <div id="checklist-output"></div>
 
@@ -90,12 +57,10 @@
 
     <!-- ライブラリ -->
     <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
     <!-- アプリ -->
     <script src="js/industry-data.js"></script>
     <script src="js/app.js"></script>
     <script src="js/excel-export.js"></script>
-    <script src="js/analyzer.js"></script>
 </body>
 </html>

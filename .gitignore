@@ -1,0 +1,7 @@
+# 機密文書の誤コミット防止
+sample/
+*.pdf
+
+# OS
+.DS_Store
+Thumbs.db
